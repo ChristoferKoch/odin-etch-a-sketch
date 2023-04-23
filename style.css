@@ -1,0 +1,7 @@
+.grid-container {
+    display: flex;
+}
+
+.square {
+    border: black solid 1px;
+}
