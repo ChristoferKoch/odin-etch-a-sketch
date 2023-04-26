@@ -4,6 +4,13 @@ const container = document.createElement('div');
 body.appendChild(container);
 gridGenerator(16);
 
+const userInput = document.createElement('button');
+userInput.innerText = 'Input Size';
+userInput.addEventListener('click', (e) => {
+    gridGenerator(prompt('Please enter a width:'));
+});
+body.appendChild(userInput);
+
 function gridGenerator(size) {
     const gridContainer = document.createElement('div');
     let row;
@@ -17,9 +24,13 @@ function gridGenerator(size) {
 
     for (let i = 0; i < size; i++) {
         row = document.createElement('div');
+        row.classList.add('row-container');
         for (let j = 0; j < size; j++) {
             col = document.createElement('div');
             col.classList.add('square');
+            col.addEventListener('mouseenter', (e) => {
+                e.target.style.backgroundColor = 'black';
+            });
             row.appendChild(col);
         }
         gridContainer.appendChild(row);

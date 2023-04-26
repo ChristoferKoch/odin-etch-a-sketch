@@ -1,9 +1,22 @@
+body {
+    height: 100vh;
+    width: 100vw;
+}
+
 .grid-container {
     display: flex;
+    flex-direction: column;
+    width: 640px;
+    height: 640px;
+    border: black solid 1px;
+}
+
+.row-container {
+    display: flex;
+    flex-grow: 1;
 }
 
 .square {
     border: black solid 1px;
-    width: 960px;
-    height: 960px;
+    flex-grow: 1;
 }
